@@ -11,12 +11,8 @@ router.get('/', (req,res) => {
     return res.send('Ola, DEV!');
 })
 
-router.post(
-'/cidades', 
-CidadesController.createBodyValidator, 
-CidadesController.createQueryValidator, 
-CidadesController.create
-);
+router.get('/cidades', CidadesController.getAllValidation, CidadesController.getAll);
+router.post('/cidades', CidadesController.createValidation, CidadesController.create);
 
 
 
